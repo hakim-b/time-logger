@@ -233,7 +233,7 @@ export function WeekCalendar() {
               onPointerCancel={handlePointerUp}
             >
               <div
-                className="grid min-w-[52rem] gap-px"
+                className="grid min-w-208 gap-px"
                 style={{
                   gridTemplateColumns: "4.5rem repeat(7, minmax(0, 1fr))",
                 }}
