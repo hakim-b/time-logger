@@ -38,6 +38,17 @@ function ThemeHotkey() {
   const { resolvedTheme, setTheme } = useTheme()
 
   React.useEffect(() => {
+    if (!resolvedTheme) {
+      return
+    }
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      resolvedTheme === "dark" ? "dark" : "light"
+    )
+  }, [resolvedTheme])
+
+  React.useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.defaultPrevented || event.repeat) {
         return
